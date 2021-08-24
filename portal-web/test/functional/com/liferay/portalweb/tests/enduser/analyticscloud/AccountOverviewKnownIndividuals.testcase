@@ -2,7 +2,7 @@
 definition {
 
 	property analytics.cloud.enabled = "true";
-	property minimum.slave.ram = "32";
+	property minimum.slave.ram = "32";  
 	property portal.release = "false";
 	property portal.upstream = "true";
 	property testray.main.component.name = "Analytics Cloud";
