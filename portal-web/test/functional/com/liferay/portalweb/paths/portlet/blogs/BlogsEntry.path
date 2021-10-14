@@ -121,6 +121,11 @@
 	<td></td>
 </tr>
 <tr>
+	<td>CONTENT_VIEW_MODE</td>
+	<td>//div[contains(@class,'alloy-editor-switch')]//button[@data-title='${key_mode}']</td>
+	<td></td>
+</tr>
+<tr>
 	<td>CONTENT_SMALL_IMAGE</td>
 	<td>//div[contains(@class,'asset-small-image')]//img[contains(@src,'${key_imageFileName}')]</td>
 	<td></td>

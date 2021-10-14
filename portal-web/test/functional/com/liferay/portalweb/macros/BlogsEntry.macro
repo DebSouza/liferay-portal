@@ -727,6 +727,20 @@ definition {
 			locator1 = "AlloyEditor#TEXT_FORMATTING_STYLE_DROPDOWN");
 	}
 
+	macro switchContentViewMode {
+		var key_mode = "${viewMode}";
+
+		AlloyEditor.clickContentField();
+
+		Click(locator1 = "Button#EDITOR_SWITCH");
+
+		if ("${viewMode}" != "Code View") {
+			Click(
+				locator1= "BlogsEntry#CONTENT_VIEW_MODE",
+				value1 = "${viewMode}");
+		}
+	}
+
 	macro tearDownCP {
 		Navigator.openURL();
 
