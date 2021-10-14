@@ -135,13 +135,42 @@ definition {
 	}
 
 	@description = "This is a test for LPS-136762. It checks that content can be added in full screen mode."
-	@ignore = "true"
 	@priority = "2"
 	test CanAddContentInFullScreenMode {
 		property portal.acceptance = "false";
 
-		// TODO LPS-136762 CanAddContentInFullScreenMode pending implementation
+		JSONLayout.addPublicLayout(
+			groupName = "Guest",
+			layoutName = "Blogs Page");
 
+		JSONLayout.addWidgetToPublicLayout(
+			groupName = "Guest",
+			layoutName = "Blogs Page",
+			widgetName = "Blogs");
+
+		BlogsNavigator.openToAddEntry(
+			layoutName = "Blogs Page",
+			siteURLKey = "guest");
+
+		BlogsEntry.addTitle(entryTitle = "Blogs Entry Title");
+
+		BlogsEntry.switchContentViewMode(viewMode = "Fullscreen");
+
+		Type.typeAceEditor(
+			locator1 = "TextArea#ACE_EDITOR",
+			value1 = "Blogs Entry Content");
+
+		Button.clickDone();
+
+		Button.clickPublish();
+
+		Navigator.gotoSitePage(
+			pageName = "Blogs Page",
+			siteName = "Liferay DXP");
+
+		AssertTextEquals(
+			locator1 = "PageEditor#CONTENT_PAGE_TEXT_CONTENT",
+			value1 = "Blogs Entry Content");
 	}
 
 	@description = "This is a test for LPS-136763. It checks that 400 characters can be added to the description."

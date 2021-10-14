@@ -736,7 +736,7 @@ definition {
 
 		if ("${viewMode}" != "Code View") {
 			Click(
-				locator1= "BlogsEntry#CONTENT_VIEW_MODE",
+				locator1 = "BlogsEntry#CONTENT_VIEW_MODE",
 				value1 = "${viewMode}");
 		}
 	}
