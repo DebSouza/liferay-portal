@@ -1,0 +1,27 @@
+@component-name = "dxp-cloud"
+definition {
+
+	property portal.release = "false";
+	property portal.upstream = "true";
+	property testray.main.component.name = "Analytics Cloud";
+
+
+	// setUp {
+
+	// }
+
+	// tearDown {
+
+	// }
+
+	@description = "Sign in DXP Cloud https://console.liferay.coffee/"
+	@priority = "5"
+	test SignInConsoleCoffee {
+		task ("Navigate to DXP Cloud console") {
+            DXPCUtils.launchDXPC();
+
+		}
+	}
+
+
+}
