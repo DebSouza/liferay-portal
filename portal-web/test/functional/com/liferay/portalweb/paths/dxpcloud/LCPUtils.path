@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>LCPUtils</title>
+</head>
+
+<body>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LCPUtils</td></tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>ACCENT_BUTTON</td>
+	<td>//button[contains(@class, 'btn-accent')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>HEADER_TITLE</td>
+	<td>//h1[contains(text(),'${key_headerTitle}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROJECT_NAME_TOPBAR</td>
+	<td>//div[contains(@class,'dropdown')]//span[@title='${key_projectName}']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GENERIC_DROPDOWN</td>
+	<td>//div[@class='dropdown']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>GENERIC_ENTRY_FIELD</td>
+	<td>//input[@id='${key_inputId}']</td>
+	<td></td>
+</tr>
+<!-- TAB -->
+<tr>
+	<td>ANY_TAB</td>
+	<td>//li[contains(@class,'content-tab')]//div[contains(text(),'${key_tabName}')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TAB_SELECTED</td>
+	<td>//li[contains(@class,'content-tab-selected')]</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

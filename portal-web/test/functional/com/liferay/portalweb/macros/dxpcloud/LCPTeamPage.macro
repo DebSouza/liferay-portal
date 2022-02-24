@@ -1,0 +1,46 @@
+definition {
+
+	macro assertMemberInfo {
+		AssertElementPresent(
+			key_columnName = "${columnName}",
+			key_tableEntry = "${memberInfo}",
+			locator1 = "LCPTeam#MEMBER_TABLE_INFO");
+	}
+
+	macro cancelInvitation {
+		if (IsElementNotPresent(key_headerTitle = "Team", locator1 = "LCPUtils#HEADER_TITLE")){
+			LCPNavigator.goToPortlet(category = "Team");
+		}
+
+		Click(
+			key_tabName = "Invited",
+			locator1 = "LCPUtils#ANY_TAB");
+
+		Click(
+			key_emailAddress = "${emailAddress}",
+			locator1 = "LCPTeam#MEMBER_ELLIIPSIS_VERTIVAL");
+
+		MenuItem.click(menuItem = "Cancel Invitation");
+	}
+
+	macro inviteMember {
+		if (IsElementNotPresent(key_headerTitle = "Team", locator1 = "LCPUtils#HEADER_TITLE")){
+			LCPNavigator.goToPortlet(category = "Team");
+		}
+
+		Click(locator1 = "LCPTeam#EMAIL_INVITE_MEMBER_FIELD");
+
+		Type(
+			locator1 = "LCPTeam#EMAIL_INVITE_MEMBER_FIELD",
+			value1 = "${emailAddress}");
+
+		Click(locator1 = "LCPUtils#GENERIC_DROPDOWN");
+
+		MenuItem.click(menuItem = StringUtil.upperCaseFirstLetter("${roleName}"));
+
+		Click(locator1 = "LCPTeam#SEND_INVITE_BUTTON");
+
+		Alert.viewSuccessMessageText(successMessage = "Invitation sent");
+	}
+
+}

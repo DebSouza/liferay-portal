@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>LCPSettings</title>
+</head>
+
+<body>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LCPSettings</td></tr>
+</thead>
+
+<tbody>
+<!-- DELETE_PROJECT -->
+<tr>
+	<td>DELETE_PROJECT_BUTTON</td>
+	<td>//a[normalize-space()='Delete Environment'] | //span[normalize-space()='Delete Environment']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ALERT_PREJECT_DELETED</td>
+	<td>//div[@role='alert' and contains(.,'Environment deleted')]</td>
+	<td></td>
+</tr>
+<!-- SUPPORT_ACCESS -->
+<tr>
+	<td>SUPPORT_ACCESS_SWITCH_ACTIVE</td>
+	<td>//div[contains(@class,'switch-active')]//input[contains(@class,'switch')]</td>
+	<td></td>
+</tr>
+
+</tbody>
+</table>
+</body>
+</html>

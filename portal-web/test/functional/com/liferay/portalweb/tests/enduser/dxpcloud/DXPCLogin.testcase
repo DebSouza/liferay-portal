@@ -6,22 +6,96 @@ definition {
 	property testray.main.component.name = "Analytics Cloud";
 
 
-	// setUp {
+	setUp {
+		LCPUtils.launchLCP();
 
-	// }
+		LCPAuthentication.login(
+			emailAddress = "debora.souza@liferay.com",
+			password = "#4Zu0S*.d");
+	}
 
 	// tearDown {
 
 	// }
 
-	@description = "Sign in DXP Cloud https://console.liferay.coffee/"
-	@priority = "5"
-	test SignInConsoleCoffee {
-		task ("Navigate to DXP Cloud console") {
-            DXPCUtils.launchDXPC();
 
+	@description = "Navigate to DXP Cloud Environments and select a sidebar item"
+	@priority = "5"
+	test NavigateToASidebarItem {
+		task ("Open environment and navigate to a sidebar item") {
+			LCPProjectsPage.openEnvironment(
+				environmentName = "dev",
+				headerTitle = "Overview");
+
+			LCPNavigator.goToPortlet(category = "Logs");
 		}
 	}
 
+	@description = "Open specific environment"
+	@priority = "5"
+	test OpenSpecificEnvironment {
+		task ("Open specific environment") {
+			LCPProjectsPage.openEnvironment(
+				environmentName = "dev",
+				headerTitle = "Overview");
+		}
+	}
+
+	@description = "SignOut DXP Cloud"
+	@priority = "5"
+	test SignOutConsoleCoffee {
+		LCPAuthentication.logout();
+	}
+
+	@description = "View Environment Status"
+	@priority = "5"
+	test ViewEnvironmentStatus {
+		task ("Assert environment status") {
+			LCPProjectsPage.assertEnvironmentStatus(
+				environmentName = "dev",
+				status = "Ready");
+
+			LCPProjectsPage.assertEnvironmentStatus(
+				environmentName = "prd",
+				status = "None");
+		}
+	}
+
+	@description = "View Environment Status"
+	@priority = "5"
+	test DropdownAnyItem {
+		task ("Open dropdown item") {
+			LCPNavigator.goToDropdownAnyItem(dropdownItem = "View Profile");
+		}
+	}
+
+	@description = "Invite member to project"
+	@priority = "5"
+	test InviteMember {
+		task ("Navigate to DXP Cloud console, login and open environment") {	
+			LCPProjectsPage.openEnvironment(
+				environmentName = "dev",
+				headerTitle = "Overview");
+		}
+
+		task ("Invite member") {
+			LCPTeamPage.inviteMember(
+				emailAddress = "cat@cat.com",
+				roleName = "Admin");
+		}
+
+		task ("Assert member present") {
+			Click(
+				key_tabName = "Invited",
+				locator1 = "LCPUtils#ANY_TAB");
+		}
+
+		task ("Cancel Invitation") {
+			LCPTeamPage.cancelInvitation(emailAddress = "cat@cat.com");
+
+			Pause(locator1 = "5000");
+		}
+
+	}
 
 }

@@ -1,0 +1,18 @@
+definition {
+
+	macro deleteEnvironment {
+		LCPNavigator.goToPortlet(category = "Settings");
+
+		Click(locator1 = "LCPSettings#DELETE_PROJECT_BUTTON");
+
+		Pause(locator1 = "3000");
+
+		for (var delete : list "access,domains,data") {
+			Check.checkNotVisible(
+				checkboxName = "${delete}",
+				locator1 = "Checkbox#ANY_CHECKBOX");
+		}
+
+		Click(locator1 = "LCPSettings#DELETE_PROJECT_BUTTON");
+	}
+}

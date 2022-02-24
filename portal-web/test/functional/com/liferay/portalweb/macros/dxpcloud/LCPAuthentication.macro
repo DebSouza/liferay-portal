@@ -1,0 +1,31 @@
+definition {
+
+	macro login {
+		WaitForPageLoad();
+
+		Click(
+			key_inputId = "email",
+			locator1 = "LCPUtils#GENERIC_ENTRY_FIELD");
+
+		Type(
+			key_inputId = "email",
+			locator1 = "LCPUtils#GENERIC_ENTRY_FIELD",
+			value1 = "poshi.tester@liferay.cloud");
+
+		Click(
+			key_inputId = "password",
+			locator1 = "LCPUtils#GENERIC_ENTRY_FIELD");
+
+		Type(
+			key_inputId = "password",
+			locator1 = "LCPUtils#GENERIC_ENTRY_FIELD",
+			value1 = "rbu.QKQ-emd1mgj1avf");
+
+		Click(locator1 = "LCPUtils#ACCENT_BUTTON");
+	}
+
+	macro logout {
+		LCPNavigator.goToDropdownAnyItem(dropdownItem = "Log Out");
+	}
+
+}

@@ -1,0 +1,45 @@
+definition {
+
+	macro assertEnvironmentStatus {
+		AssertTextEquals(
+			key_environment = "${environmentName}",
+			locator1 = "LCPProjects#ENVIRONMENT_STATUS",
+			value1 = "${status}");
+	}
+
+	macro createNewProject {
+		if (!(isSet(projectName))) {
+			var projectName = "poshitest";
+		}
+
+		if (!(isSet(location))) {
+			var location = "Oregon, USA";
+		}
+
+		Navigator.openSpecificURL(url = "https://console.liferay.coffee/projects/new-project");
+
+		Click(locator1 = "LCPProjects#PROJECT_ID_FIELD");
+
+		Type(
+			locator1 = "LCPProjects#PROJECT_ID_FIELD",
+			value1 = "${projectName}");
+
+		Click(locator1 = "LCPUtils#GENERIC_DROPDOWN");
+
+		MenuItem.click(menuItem = "${location}");
+
+		Click(locator1 = "Button#SUBMIT");
+	}
+
+	macro openEnvironment {
+		Click(
+			key_environment = "${environmentName}",
+			locator1 = "LCPProjects#PROJECT_ROW");
+	}
+
+	macro orderEnvironment {
+		Click(locator1 = "LCPProjects#ORDER_DROPDOWN");
+
+		
+	}
+}

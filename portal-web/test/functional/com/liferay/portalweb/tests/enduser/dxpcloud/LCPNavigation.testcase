@@ -1,0 +1,45 @@
+@component-name = "dxp-cloud"
+definition {
+
+	property portal.release = "false";
+	property portal.upstream = "true";
+	property testray.main.component.name = "Analytics Cloud";
+
+
+	setUp {
+		LCPUtils.launchLCP();
+
+		LCPAuthentication.login();
+
+		LCPProjectsPage.createNewProject();
+
+		Navigator.openSpecificURL(url = "https://console.liferay.coffee/projects");
+	}
+
+	tearDown {
+		LCPSettingsPage.deleteEnvironment();
+
+		LCPAuthentication.logout();
+	}
+
+	@description = "Create a new project"
+	@priority = "5"
+	test CanCreateNewProject {
+		task ("Open environment") {	
+			LCPProjectsPage.openEnvironment(environmentName = "poshitest");
+		}
+
+		task ("Assert project name") {	
+			AssertElementPresent(
+				key_projectName = "poshitest",
+				locator1 = "LCPUtils#PROJECT_NAME_TOPBAR");
+		}
+
+		task ("Assert header title") {	
+			AssertElementPresent(
+				key_headerTitle = "Overview",
+				locator1 = "LCPUtils#HEADER_TITLE");
+		}
+	}
+
+}

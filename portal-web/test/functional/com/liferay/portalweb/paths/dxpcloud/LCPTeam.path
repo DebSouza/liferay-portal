@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>LCPTeam</title>
+</head>
+
+<body>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LCPTeam</td></tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>MEMBER_TABLE_INFO</td>
+	<td>//div[contains(@class,'team-list')]//div[contains(@class,'item-${key_columnName}') and contains(.,'${key_tableEntry}')]</td>
+	<td></td>
+</tr>
+<!-- CANCEL INVITATION MEMBER -->
+<tr>
+	<td>ALERT_SUCCESSFULLY_CANCELED</td>
+	<td>//div[@role='alert' and contains(.,'The request was successful.')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>MEMBER_ELLIIPSIS_VERTIVAL</td>
+	<td>//div[contains(@class,'item-email') and contains(.,'${key_emailAddress}')]/..//span[contains(@class,'ellipsis-vertical')]</td>
+	<td></td>
+</tr>
+<!-- INVITE MEMBER -->
+<tr>
+	<td>EMAIL_INVITE_MEMBER_FIELD</td>
+	<td>//input[@id='collaboratorEmail']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SEND_INVITE_BUTTON</td>
+	<td>//button[@type='submit' and contains(text(),'Send Invite')]</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
