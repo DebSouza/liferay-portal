@@ -1,0 +1,29 @@
+@component-name = "dxp-cloud"
+definition {
+
+	property portal.release = "false";
+	property portal.upstream = "true";
+	property testray.main.component.name = "Analytics Cloud";
+
+
+	setUp {
+		LCPUtils.launchLCP();
+	}
+
+	// tearDown {
+
+	// }
+
+	@description = "Can log in and out of DXP Cloud"
+	@priority = "5"
+	test LoginAndLogoutInConsoleCoffee {
+		task ("Log in console coffee") {	
+			LCPAuthentication.login();
+		}
+
+		task ("Log out console coffee") {	
+			LCPAuthentication.logout();
+		}
+	}
+
+}
