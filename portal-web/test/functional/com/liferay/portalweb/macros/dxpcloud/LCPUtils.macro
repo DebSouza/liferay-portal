@@ -1,0 +1,11 @@
+definition {
+
+	macro launchLCP {
+		var dxpCloudURL = PropsUtil.get("analytics.cloud.url");
+
+		echo("This is the echo = ${dxpCloudURL}");
+
+		Open(locator1 = "${dxpCloudURL}");
+	}
+
+}
