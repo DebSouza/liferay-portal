@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>LCPUtils</title>
+</head>
+
+<body>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LCPUtils</td></tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>GENERIC_INPUT_FIELD</td>
+	<td>//input[@id='${key_inputId}']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>SUBMIT_BUTTON</td>
+	<td>//button[contains(@class, 'btn-accent')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>USER_AVATAR_PORTRAIT</td>
+	<td>//nav[contains(@class,'topbar')]//button//span[contains(@class,'avatar-initials')]</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,27 @@
+definition {
+
+	macro login {
+		WaitForPageLoad();
+
+		Type(
+			key_inputId = "email",
+			locator1 = "LCPUtils#GENERIC_INPUT_FIELD",
+			value1 = "poshi.tester@liferay.cloud");
+
+		Type(
+			key_inputId = "password",
+			locator1 = "LCPUtils#GENERIC_INPUT_FIELD",
+			value1 = "rbu.QKQ-emd1mgj1avf");
+
+		Click(locator1 = "LCPUtils#SUBMIT_BUTTON");
+	}
+
+	macro logout {
+		Click(locator1 = "LCPUtils#USER_AVATAR_PORTRAIT");
+
+		Click(
+			key_item = "Log Out",
+			locator1 = "LCPNavigation#USER_AVATAR_DROPDOWN_ANY_ITEM");
+    }
+
+}
