@@ -1,0 +1,25 @@
+definition {
+
+	macro createNewProject {
+		if (!(isSet(projectName))) {
+			var projectName = "poshitest";
+		}
+
+		if (!(isSet(location))) {
+			var location = "Oregon, USA";
+		}
+
+		Navigator.openSpecificURL(url = "https://console.liferay.coffee/projects/new-project");
+
+		Type(
+			locator1 = "LCPProjects#PROJECT_ID_FIELD",
+			value1 = "${projectName}");
+
+		Click(locator1 = "LCPUtils#GENERIC_DROPDOWN");
+
+		MenuItem.click(menuItem = "${location}");
+
+		Click(locator1 = "Button#SUBMIT");
+	}
+
+}
