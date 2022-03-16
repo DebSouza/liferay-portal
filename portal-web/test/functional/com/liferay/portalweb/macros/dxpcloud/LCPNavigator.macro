@@ -1,0 +1,13 @@
+definition {
+
+	macro goToPortlet {
+		if (IsVisible(locator1 = "LCPNavigation#EXPAND_SIDEBAR_MENU")) {
+			Click(locator1 = "LCPNavigation#EXPAND_SIDEBAR_MENU");
+		}
+
+		Click(
+			key_itemName = "${category}",
+			locator1 = "LCPNavigation#SIDEBAR_ITEM");
+	}
+
+}
