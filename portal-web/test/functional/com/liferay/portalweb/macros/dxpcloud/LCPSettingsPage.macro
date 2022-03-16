@@ -1,0 +1,21 @@
+definition {
+
+	macro deleteEnvironment {
+		LCPNavigator.goToPortlet(category = "Settings");
+
+        Click(
+            key_tabName = "Delete Environment",
+            locator1 = "LCPSettings#SETTINGS_TAB");
+
+		Click(locator1 = "LCPSettings#DELETE_ENVIRONMENT_BUTTON");
+
+		for (var delete : list "access,domains,data") {
+			Check.checkNotVisible(
+				checkboxName = "${delete}",
+				locator1 = "Checkbox#ANY_CHECKBOX");
+		}
+
+		Click(locator1 = "LCPSettings#DELETE_ENVIRONMENT_BUTTON");
+	}
+
+}
