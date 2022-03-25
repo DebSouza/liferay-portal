@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>LCPSettings</title>
+</head>
+
+<body>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LCPSettings</td></tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>SETTINGS_TAB</td>
+	<td>//div[contains(@class,'ant-tabs-tab-btn') and normalize-space()='${key_tabName}']</td>
+	<td></td>
+</tr>
+<!-- DELETE_PROJECT -->
+<tr>
+	<td>DELETE_ENVIRONMENT_BUTTON</td>
+	<td>xpath=(//a | //span)[normalize-space()='Delete Environments'] | (//a | //span)[normalize-space()='Delete Environment']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ALERT_PREJECT_DELETED</td>
+	<td>//div[@role='alert' and contains(.,'Environment deleted')]</td>
+	<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
