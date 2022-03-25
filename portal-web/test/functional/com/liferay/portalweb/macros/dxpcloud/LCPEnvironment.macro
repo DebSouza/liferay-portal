@@ -1,0 +1,18 @@
+definition {
+
+	macro addNewEnvironment {
+		Click(locator1 = "LCPEnvironment#SWITCH_ENVIRONMENTS_ARROW");
+
+		MenuItem.click(menuItem = "Add new environment");
+
+		Type(
+			locator1 = "LCPProjects#ENVIRONMENT_ID_FIELD",
+			value1 = "${environmentType}");
+
+		Click(locator1 = "LCPUtils#GENERIC_DROPDOWN");
+
+		MenuItem.click(menuItem = "${location}");
+
+		Click(locator1 = "Button#SUBMIT");
+	}
+}

@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>LCPProjects</title>
+</head>
+
+<body>
+<table border="1" cellpadding="1" cellspacing="1">
+<thead>
+<tr><td rowspan="1" colspan="3">LCPProjects</td></tr>
+</thead>
+
+<tbody>
+<!-- NEW_PROJECT -->
+<tr>
+	<td>ALERT_CREATED_NEW_PROJECT</td>
+	<td>//div[@role='alert' and contains(.,'Project was created successfully.')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>PROJECT_ID_FIELD</td>
+	<td>//input[@id='projectId']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>ENVIRONMENT_ID_FIELD</td>
+	<td>//input[@id='environmentId']</td>
+	<td></td>
+</tr>
+<!-- PROJECTS SCREEN -->
+<tr>
+	<td>PROJECT_ROW</td>
+	<td>//tr[contains(@data-testid,'${key_environment}')]//td[contains(@class,'ellipsis')]</td>
+	<td></td>
+</tr>
+=======
+>>>>>>> 30fb83c (LRQA-73365 Add macro to create new project in console coffee)
+</tbody>
+</table>
+</body>
+</html>
