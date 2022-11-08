@@ -1,0 +1,6 @@
+definition {
+
+	macro gotoCalendarMenuOption {
+		Navigator.gotoPage(pageName = "Calendar Page");
+    }
+}
